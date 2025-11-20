@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
   },
 
   orContainer: {
-    marginVertical: 15,
+    marginVertical: 14,
     alignItems: 'center',
     position: 'relative',
   },
