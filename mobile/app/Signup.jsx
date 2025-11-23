@@ -84,7 +84,7 @@ const SignUp = () => {
 
         console.log("Signed up user:", user);
 
-        router.replace("/(tabs)/home");
+        router.replace("/BudgetOnboarding");
       } catch (error) {
         console.log("Signup error:", error?.response?.data || error.message);
         const message = error?.response?.data?.message || "Signup failed";
