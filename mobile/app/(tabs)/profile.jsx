@@ -1,15 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { 
-    SafeAreaView, 
-    View, 
-    ScrollView, 
-    Image, 
-    Text, 
-    TouchableOpacity, 
-    StyleSheet,
-    Dimensions,
-    Modal 
-} from "react-native";
+import { SafeAreaView, View, ScrollView, Image, Text, TouchableOpacity, StyleSheet, Dimensions, Modal } from "react-native";
 import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
 import { scale, verticalScale, moderateScale } from '../../src/responsive';
@@ -18,7 +8,7 @@ import { useFocusEffect, useRouter } from 'expo-router';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
-// --- Color Palette (Matching Community.jsx) ---
+// Color Palette (Matching Community.jsx) 
 const COLORS = {
     background: '#141326',
     cardBg: '#433DA3',
@@ -29,7 +19,7 @@ const COLORS = {
     yellow: '#FFC107',
 };
 
-// --- Custom Component for Circular Progress ---
+// Custom Component for Circular Progress
 const CircleProgress = ({ percent, target, saved }) => {
   return (
     <View style={circleStyles.wrapper}>
