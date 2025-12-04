@@ -6,7 +6,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { moderateScale } from '../src/responsive';
-import { styles, COLORS } from './_styles/BudgetOnboarding.styles';
+import { styles, COLORS } from '../styles/BudgetOnboarding.styles';
 import { api } from '../src/api';
 
 // List of spending categories
