@@ -1,19 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { scale, verticalScale, moderateScale } from '../../src/responsive';
-import ResourceCard from '../../src/components/ResourceCard';
+import ResourceCard from '../../../src/components/ResourceCard';
+import { styles, COLORS } from './styles';
 
-const COLORS = {
-    background: '#141326',
-    text: '#FFFFFF',
-    textSecondary: '#D7C7EC',
-    primary: '#E3823C',
-    blue: '#433DA3',
-    green: '#4CAF50',
-    red: '#E33C3C',
-};
 
 const RESOURCES = [
     {
@@ -87,35 +78,5 @@ const Learn = () => {
         </SafeAreaView>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: COLORS.background,
-    },
-    header: {
-        paddingHorizontal: scale(20),
-        paddingTop: verticalScale(20),
-        paddingBottom: verticalScale(10),
-    },
-    title: {
-        fontSize: moderateScale(28),
-        fontFamily: 'Poppins-Bold',
-        color: COLORS.text,
-    },
-    subtitle: {
-        fontSize: moderateScale(14),
-        fontFamily: 'Poppins-Regular',
-        color: COLORS.textSecondary,
-        marginTop: verticalScale(-4),
-    },
-    scrollView: {
-        flex: 1,
-    },
-    content: {
-        padding: scale(20),
-        paddingTop: verticalScale(10),
-    },
-});
 
 export default Learn;

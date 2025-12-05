@@ -2,12 +2,12 @@ import React, { useState, useCallback } from "react";
 import { SafeAreaView, View, ScrollView, Image, Text, TouchableOpacity, Modal, Alert } from "react-native";
 import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
-import { moderateScale } from '../../src/responsive';
+import { moderateScale } from '../../../src/utils/responsive';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
-import { api } from '../../src/api';
-import { styles, COLORS } from '../../styles/profile_styles';
+import { api } from '../../../src/api/api';
+import { styles, COLORS } from './styles';
 
 const MenuItem = ({ icon, label, value, onPress, isDestructive = false }) => (
   <TouchableOpacity style={styles.menuItem} onPress={onPress} activeOpacity={0.7}>
@@ -119,7 +119,7 @@ export default function Profile() {
   };
 
   const handleSettings = () => {
-    router.push('/EditBudget');
+    router.push('/budget/EditBudget');
   };
 
   const handleEmergencyFundClick = () => {
@@ -130,7 +130,7 @@ export default function Profile() {
         { text: 'Close', style: 'cancel' },
         {
           text: 'Update Target',
-          onPress: () => router.push('/EditBudget')
+          onPress: () => router.push('/budget/EditBudget')
         }
       ]
     );

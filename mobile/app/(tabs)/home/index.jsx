@@ -5,12 +5,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StatusBar } from 'expo-status-bar';
 import { MaterialIcons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { api } from '../../src/api';
-import HeroCard from '../../src/components/HeroCard';
-import GoalCard from '../../src/components/GoalCard';
-import SpendingChart from '../../src/components/SpendingChart';
-import TransactionCard from '../../src/components/TransactionCard';
-import { styles, COLORS } from '../../styles/home_styles';
+import { api } from '../../../src/api/api';
+import HeroCard from '../../../src/components/budget/HeroCard';
+import GoalCard from '../../../src/components/budget/GoalCard';
+import SpendingChart from '../../../src/components/budget/SpendingChart';
+import TransactionCard from '../../../src/components/expense/TransactionCard';
+import { styles, COLORS } from './styles';
 
 const Home = () => {
   const router = useRouter();
@@ -161,7 +161,7 @@ const Home = () => {
         <View style={styles.actionRow}>
           <TouchableOpacity
             style={[styles.actionButton, styles.primaryAction]}
-            onPress={() => router.push('/AddExpense')}
+            onPress={() => router.push('/budget/AddExpense')}
             activeOpacity={0.8}
           >
             <MaterialIcons name="add" size={24} color={COLORS.text} />
@@ -170,7 +170,7 @@ const Home = () => {
 
           <TouchableOpacity
             style={[styles.actionButton, styles.secondaryAction]}
-            onPress={() => router.push('/ExpenseHistory')}
+            onPress={() => router.push('/budget/ExpenseHistory')}
             activeOpacity={0.8}
           >
             <MaterialIcons name="history" size={24} color={COLORS.textSecondary} />
@@ -213,7 +213,7 @@ const Home = () => {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>Recent Transactions</Text>
-            <TouchableOpacity onPress={() => router.push('/ExpenseHistory')}>
+            <TouchableOpacity onPress={() => router.push('/budget/ExpenseHistory')}>
               <Text style={styles.linkText}>View All</Text>
             </TouchableOpacity>
           </View>

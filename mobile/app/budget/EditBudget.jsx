@@ -5,8 +5,8 @@ import { StatusBar } from 'expo-status-bar';
 import { useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { scale, verticalScale, moderateScale } from '../src/responsive';
-import { api } from '../src/api';
+import { scale, verticalScale, moderateScale } from '../../src/utils/responsive';
+import { api } from '../../src/api/api';
 
 const COLORS = {
     background: '#141326',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { scale, verticalScale, moderateScale } from '../responsive';
+import { scale, verticalScale, moderateScale } from '../utils/responsive';
 
 const COLORS = {
     cardBg: '#2A265C',

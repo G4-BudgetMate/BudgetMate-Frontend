@@ -3,10 +3,10 @@ import { View, Text, ScrollView, TouchableOpacity, Alert, RefreshControl } from 
 import { StatusBar } from 'expo-status-bar';
 import { MaterialIcons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { moderateScale } from '../../src/responsive';
+import { moderateScale } from '../../../src/utils/responsive';
 import { useFocusEffect, useRouter } from 'expo-router';
-import { api } from '../../src/api';
-import { styles, COLORS } from '../../styles/community_styles';
+import { api } from '../../../src/api/api';
+import { styles, COLORS } from './styles';
 
 const CATEGORIES = [
     { id: 'all', label: 'All', color: COLORS.yellow },

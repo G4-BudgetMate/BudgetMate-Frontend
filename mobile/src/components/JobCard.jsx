@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { scale, verticalScale, moderateScale } from '../responsive';
+import { scale, verticalScale, moderateScale } from '../utils/responsive';
 
 const COLORS = {
     cardBg: '#433DA3', // Purple from screenshot

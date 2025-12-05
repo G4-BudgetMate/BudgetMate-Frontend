@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
-import { Ionicons } from '@expo/vector-icons';
 import { View, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 const COLORS = {
   background: '#141326',
@@ -26,18 +26,13 @@ export default function TabsLayout() {
         tabBarActiveTintColor: COLORS.primary,
         tabBarInactiveTintColor: COLORS.inactive,
         tabBarShowLabel: false,
-        tabBarIndicatorStyle: {
-          backgroundColor: COLORS.primary,
-          height: 3,
-          borderRadius: 2,
-        },
       }}
     >
       <Tabs.Screen
-        name="home"
+        name="home/index"
         options={{
-          title: "",
-          tabBarIcon: ({ color, size, focused }) => (
+          title: "Home",
+          tabBarIcon: ({ color, focused }) => (
             <View style={styles.iconContainer}>
               <Ionicons name="home-outline" size={28} color={color} />
               {focused && <View style={styles.activeIndicator} />}
@@ -46,10 +41,10 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="learn"
+        name="learn/index"
         options={{
-          title: "",
-          tabBarIcon: ({ color, size, focused }) => (
+          title: "Learn",
+          tabBarIcon: ({ color, focused }) => (
             <View style={styles.iconContainer}>
               <Ionicons name="book-outline" size={28} color={color} />
               {focused && <View style={styles.activeIndicator} />}
@@ -58,10 +53,10 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="earn"
+        name="earn/index"
         options={{
-          title: "",
-          tabBarIcon: ({ color, size, focused }) => (
+          title: "Earn",
+          tabBarIcon: ({ color, focused }) => (
             <View style={styles.iconContainer}>
               <Ionicons name="wallet-outline" size={28} color={color} />
               {focused && <View style={styles.activeIndicator} />}
@@ -70,10 +65,10 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="community"
+        name="community/index"
         options={{
-          title: "",
-          tabBarIcon: ({ color, size, focused }) => (
+          title: "Community",
+          tabBarIcon: ({ color, focused }) => (
             <View style={styles.iconContainer}>
               <Ionicons name="people-outline" size={28} color={color} />
               {focused && <View style={styles.activeIndicator} />}
@@ -82,10 +77,10 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="profile"
+        name="profile/index"
         options={{
-          title: "",
-          tabBarIcon: ({ color, size, focused }) => (
+          title: "Profile",
+          tabBarIcon: ({ color, focused }) => (
             <View style={styles.iconContainer}>
               <Ionicons name="person-circle-outline" size={28} color={color} />
               {focused && <View style={styles.activeIndicator} />}

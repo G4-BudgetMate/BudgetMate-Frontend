@@ -4,8 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
-import { scale, verticalScale, moderateScale } from '../src/responsive';
-import { api } from '../src/api';
+import { scale, verticalScale, moderateScale } from '../../src/utils/responsive';
+import { api } from '../../src/api/api';
 
 const COLORS = {
     background: '#141326',

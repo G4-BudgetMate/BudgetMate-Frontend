@@ -53,7 +53,7 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-// 2. Email Login
+// 2. Email/Username Login
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -61,17 +61,20 @@ router.post("/login", async (req, res) => {
     if (!email || !password) {
       return res
         .status(400)
-        .json({ message: "Email and password are required" });
+        .json({ message: "Email/Username and password are required" });
     }
 
-    const user = await User.findOne({ email });
+    // Try to find user by email OR username (name field)
+    const user = await User.findOne({
+      $or: [{ email: email }, { name: email }]
+    });
     if (!user || !user.password) {
-      return res.status(401).json({ message: "Invalid email or password" });
+      return res.status(401).json({ message: "Invalid email/username or password" });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(401).json({ message: "Invalid email or password" });
+      return res.status(401).json({ message: "Invalid email/username or password" });
     }
 
     const token = createToken(user._id);

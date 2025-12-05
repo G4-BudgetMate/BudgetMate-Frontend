@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialIcons } from '@expo/vector-icons';
-import { scale, verticalScale, moderateScale } from '../responsive';
+import { scale, verticalScale, moderateScale } from '../../utils/responsive';
 
 const COLORS = {
     background: '#141326',

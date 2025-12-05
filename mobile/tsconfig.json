@@ -5,6 +5,15 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@api/*": [
+        "./src/api/*"
       ]
     }
   },
@@ -12,6 +21,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-, "app/_layout.jsx", "app/index.jsx"  ]
+    "expo-env.d.ts",
+    "app/_layout.jsx",
+    "app/index.jsx"
+  ]
 }

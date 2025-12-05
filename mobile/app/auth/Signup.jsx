@@ -4,9 +4,9 @@ import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Link, useRouter } from 'expo-router';
-import { api } from "../src/api";
+import { api } from "../../src/api/api";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { styles } from '../styles/Signup_styles';
+import { styles } from '../../styles/Signup_styles';
 
 const SignUp = () => {
   const [username, setUsername] = useState('');
@@ -95,7 +95,7 @@ const SignUp = () => {
         console.log("Signed up user:", user);
         console.log("Saved to AsyncStorage:", username);
 
-        router.replace("/BudgetOnboarding");
+        router.replace("/budget/BudgetOnboarding");
       } catch (error) {
         console.log("Signup error:", error?.response?.data || error.message);
         const message = error?.response?.data?.message || "Signup failed";
@@ -212,7 +212,7 @@ const SignUp = () => {
         <TouchableOpacity style={styles.google}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Image
-              source={require('../assets/images/googlelogo.png')}
+              source={require('../../assets/images/googlelogo.png')}
               style={{ width: 25, height: 25 }}
             />
             <Text style={styles.googleText}>Google</Text>

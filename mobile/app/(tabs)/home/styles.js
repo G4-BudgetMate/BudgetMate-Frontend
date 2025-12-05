@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { scale, verticalScale, moderateScale } from '../src/responsive';
+import { scale, verticalScale, moderateScale } from '../../../src/utils/responsive';
+
 
 const COLORS = {
     background: '#141326',

@@ -5,9 +5,9 @@ import { StatusBar } from 'expo-status-bar';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { moderateScale } from '../src/responsive';
-import { styles, COLORS } from '../styles/BudgetOnboarding.styles';
-import { api } from '../src/api';
+import { moderateScale } from '../../src/utils/responsive';
+import { styles, COLORS } from '../../styles/BudgetOnboarding.styles';
+import { api } from '../../src/api/api';
 
 // List of spending categories
 const SPENDING_CATEGORIES = [
@@ -189,7 +189,7 @@ export default function BudgetOnboarding() {
           <View style={styles.welcomeContent}>
             <Text style={styles.welcomeText}>Welcome to</Text>
             <Image
-              source={require('../assets/images/Logo.png')}
+              source={require('../../assets/images/Logo.png')}
               style={styles.logo}
               resizeMode="contain"
             />

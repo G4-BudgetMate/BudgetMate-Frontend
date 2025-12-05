@@ -2,14 +2,14 @@ import React, { useState, useCallback } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert, Modal, KeyboardAvoidingView, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { moderateScale, verticalScale } from '../../src/responsive';
+import { moderateScale, verticalScale } from '../../../src/utils/responsive';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
-import JobCard from '../../src/components/JobCard';
-import EarningsChart from '../../src/components/EarningsChart';
-import { styles, COLORS } from '../../styles/earn_styles';
+import JobCard from '../../../src/components/JobCard';
+import EarningsChart from '../../../src/components/budget/EarningsChart';
+import { styles, COLORS } from './styles';
 
 const JOBS = [
     {

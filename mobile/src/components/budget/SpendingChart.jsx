@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { BarChart } from 'react-native-chart-kit';
-import { scale, verticalScale, moderateScale, screenWidth } from '../responsive';
+import { scale, verticalScale, moderateScale, screenWidth } from '../../utils/responsive';
 
 const COLORS = {
     background: '#141326',
