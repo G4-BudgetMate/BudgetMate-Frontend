@@ -118,7 +118,7 @@ export default function Profile() {
   };
 
   const handlePersonalInfo = () => {
-    Alert.alert('Coming Soon', 'Personal info editing feature will be available soon!');
+    router.push('/profile/PersonalInfo');
   };
 
   const handleSettings = () => {
