@@ -92,66 +92,7 @@ const Earn = () => {
         setJobsLoading(true);
         try {
             const response = await fetchJobs();
-            const apiJobs = response.jobs || [];
-
-            // Add existing sample jobs
-            const sampleJobs = [
-                {
-                    _id: 'sample-job-1',
-                    title: 'Content Writer',
-                    description: 'Write engaging articles and blog posts for various clients',
-                    fullDescription: 'Join our network of content writers and create compelling articles, blog posts, and web content for diverse clients. This flexible opportunity allows you to work on your own schedule while building your portfolio and earning income.',
-                    difficulty: 'Beginner',
-                    payRange: '₱500 - ₱2,000 per article',
-                    timeCommitment: '5-10 hours per week',
-                    requirements: [
-                        'Strong writing skills in English',
-                        'Basic research abilities',
-                        'Ability to meet deadlines',
-                        'Access to a computer and internet'
-                    ],
-                    howToStart: 'Sign up on freelance platforms like Upwork or Fiverr, create a compelling profile showcasing your writing samples, and start bidding on beginner-friendly projects.',
-                    tags: ['writing', 'freelance', 'remote']
-                },
-                {
-                    _id: 'sample-job-2',
-                    title: 'Virtual Assistant',
-                    description: 'Provide administrative support to businesses remotely',
-                    fullDescription: 'Work as a virtual assistant helping businesses with email management, scheduling, data entry, and other administrative tasks. Perfect for organized individuals who want flexible remote work.',
-                    difficulty: 'Beginner',
-                    payRange: '₱150 - ₱300 per hour',
-                    timeCommitment: '10-20 hours per week',
-                    requirements: [
-                        'Good organizational skills',
-                        'Proficiency in Microsoft Office or Google Workspace',
-                        'Reliable internet connection',
-                        'Strong communication skills',
-                        'Time management abilities'
-                    ],
-                    howToStart: 'Create profiles on platforms like OnlineJobs.ph, Virtual Staff Finder, or Upwork. Highlight your organizational and communication skills in your profile.',
-                    tags: ['admin', 'remote', 'flexible']
-                },
-                {
-                    _id: 'sample-job-3',
-                    title: 'Social Media Manager',
-                    description: 'Manage social media accounts for small businesses',
-                    fullDescription: 'Help small businesses grow their online presence by managing their social media accounts, creating content, engaging with followers, and analyzing performance metrics.',
-                    difficulty: 'Intermediate',
-                    payRange: '₱3,000 - ₱8,000 per month per client',
-                    timeCommitment: '15-25 hours per week',
-                    requirements: [
-                        'Understanding of major social media platforms',
-                        'Basic graphic design skills (Canva)',
-                        'Content creation experience',
-                        'Analytics and reporting skills',
-                        'Creative thinking'
-                    ],
-                    howToStart: 'Build your own social media presence first to showcase your skills. Then reach out to local businesses or join freelance platforms to find clients.',
-                    tags: ['social media', 'marketing', 'creative']
-                }
-            ];
-
-            setJobs([...apiJobs, ...sampleJobs]);
+            setJobs(response.jobs || []);
         } catch (error) {
             console.error('Error loading jobs:', error);
             setJobs([]);
