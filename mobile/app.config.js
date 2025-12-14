@@ -6,21 +6,18 @@ export default {
     slug: "budgetmate",
     version: "1.0.0",
     orientation: "portrait",
-    icon: "./assets/images/icon.png",
-    scheme: "mobile",
+    icon: "./assets/images/Logo.png",
+    scheme: "budgetmate",
     userInterfaceStyle: "automatic",
     newArchEnabled: true,
     ios: {
       supportsTablet: true,
+      bundleIdentifier: "com.budgetmate.app",
     },
     android: {
-      package: "com.budgetmate.mobile",
-      adaptiveIcon: {
-        backgroundColor: "#E6F4FE",
-        foregroundImage: "./assets/images/icon.png",
-        backgroundImage: "./assets/images/android-icon-background.png",
-        monochromeImage: "./assets/images/android-icon-monochrome.png",
-      },
+      package: "com.budgetmate.app",
+      versionCode: 1,
+      icon: "./assets/images/Logo.png",
       edgeToEdgeEnabled: true,
       predictiveBackGestureEnabled: false,
     },
@@ -33,12 +30,12 @@ export default {
       [
         "expo-splash-screen",
         {
-          image: "./assets/images/splash-icon.png",
-          imageWidth: 200,
+          image: "./assets/images/Logo.png",
+          imageWidth: 300,
           resizeMode: "contain",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#1a1a2e",
           dark: {
-            backgroundColor: "#000000",
+            backgroundColor: "#1a1a2e",
           },
         },
       ],
@@ -49,6 +46,9 @@ export default {
       reactCompiler: true,
     },
     extra: {
+      eas: {
+        projectId: "9829e17f-b295-4358-996f-2ed270952a25"
+      },
       WEB_API_URL: process.env.WEB_API_URL,
       IOS_API_URL: process.env.IOS_API_URL,
       ANDROID_API_URL: process.env.ANDROID_API_URL,

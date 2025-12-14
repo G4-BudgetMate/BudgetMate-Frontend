@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, TextInput, Alert, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity, TextInput, Alert, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { api } from '../src/api/api';
-import { COLORS } from './(tabs)/community/styles';
+import { COLORS } from './styles/communityStyles';
+import { getUserAvatar } from '../src/utils/avatar';
 
 const PostDetails = () => {
     const router = useRouter();
@@ -100,7 +101,19 @@ const PostDetails = () => {
                     {/* Post Content */}
                     <View style={styles.card}>
                         <View style={styles.postHeader}>
-                            <View style={styles.avatar} />
+                            <View style={styles.avatar}>
+                                <Image
+                                    source={{
+                                        uri: getUserAvatar({
+                                            avatarSeed: post.user?.avatarSeed,
+                                            email: post.user?.email,
+                                            name: post.user?.name || post.user?.username
+                                        })
+                                    }}
+                                    style={styles.avatarImage}
+                                    resizeMode="cover"
+                                />
+                            </View>
                             <View>
                                 <Text style={styles.username}>{post.user?.username || 'Anonymous'}</Text>
                                 <Text style={styles.meta}>
@@ -136,9 +149,24 @@ const PostDetails = () => {
                     {post.comments && post.comments.length > 0 ? (
                         post.comments.map((comment, index) => (
                             <View key={index} style={styles.commentCard}>
-                                <Text style={styles.commentUser}>
-                                    {comment.user ? (comment.user.username || comment.user.name) : 'User'}
-                                </Text>
+                                <View style={styles.commentHeader}>
+                                    <View style={styles.commentAvatar}>
+                                        <Image
+                                            source={{
+                                                uri: getUserAvatar({
+                                                    avatarSeed: comment.user?.avatarSeed,
+                                                    email: comment.user?.email,
+                                                    name: comment.user?.name || comment.user?.username
+                                                })
+                                            }}
+                                            style={styles.avatarImage}
+                                            resizeMode="cover"
+                                        />
+                                    </View>
+                                    <Text style={styles.commentUser}>
+                                        {comment.user ? (comment.user.username || comment.user.name) : 'User'}
+                                    </Text>
+                                </View>
                                 <Text style={styles.commentText}>{comment.text}</Text>
                             </View>
                         ))
@@ -212,6 +240,11 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: COLORS.primary,
         marginRight: 12,
+        overflow: 'hidden',
+    },
+    avatarImage: {
+        width: '100%',
+        height: '100%',
     },
     username: {
         fontSize: 16,
@@ -262,11 +295,23 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         marginBottom: 12,
     },
+    commentHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 8,
+    },
+    commentAvatar: {
+        width: 28,
+        height: 28,
+        borderRadius: 14,
+        backgroundColor: COLORS.primary,
+        marginRight: 8,
+        overflow: 'hidden',
+    },
     commentUser: {
         fontSize: 14,
         fontWeight: 'bold',
         color: COLORS.primary,
-        marginBottom: 4,
     },
     commentText: {
         fontSize: 14,

@@ -10,8 +10,8 @@ const { validatePost } = require("../middleware/validationMiddleware");
 router.get("/", async (req, res) => {
     try {
         const posts = await Post.find()
-            .populate("user", "name username")
-            .populate("comments.user", "name username")
+            .populate("user", "name username email avatarSeed")
+            .populate("comments.user", "name username email avatarSeed")
             .sort({ createdAt: -1 });
         res.json(posts);
     } catch (err) {
@@ -35,7 +35,7 @@ router.post("/", [auth, validatePost], async (req, res) => {
         });
 
         const post = await newPost.save();
-        const populatedPost = await Post.findById(post._id).populate("user", "name username");
+        const populatedPost = await Post.findById(post._id).populate("user", "name username email avatarSeed");
         res.json(populatedPost);
     } catch (err) {
         console.error(err.message);
@@ -94,8 +94,8 @@ router.post("/:id/comment", auth, async (req, res) => {
         await post.save();
 
         const populatedPost = await Post.findById(post._id)
-            .populate("user", "name username")
-            .populate("comments.user", "name username");
+            .populate("user", "name username email avatarSeed")
+            .populate("comments.user", "name username email avatarSeed");
 
         res.json(populatedPost);
     } catch (err) {

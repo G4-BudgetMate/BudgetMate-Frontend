@@ -6,8 +6,7 @@ node_modules/
 
 # logs
 npm-debug.log*
-yarn-debug.log*git add .gitignore "app/(tabs)/learn.jsx"
-
+yarn-debug.log*
 yarn-error.log*
 
 # OS files

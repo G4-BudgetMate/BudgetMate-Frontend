@@ -1,13 +1,14 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Alert, RefreshControl, Modal, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity, Alert, RefreshControl, Modal, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { MaterialIcons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { moderateScale, scale, verticalScale } from '../../../src/utils/responsive';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { api } from '../../../src/api/api';
-import { styles, COLORS } from './styles';
+import { styles, COLORS } from '../../styles/communityStyles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { getUserAvatar } from '../../../src/utils/avatar';
 
 const CATEGORIES = [
     { id: 'all', label: 'All', color: COLORS.yellow },
@@ -216,7 +217,19 @@ const Community = () => {
                                 >
                                     {/* User Info */}
                                     <View style={styles.postHeader}>
-                                        <View style={styles.avatar} />
+                                        <View style={styles.avatar}>
+                                            <Image
+                                                source={{
+                                                    uri: getUserAvatar({
+                                                        avatarSeed: post.user?.avatarSeed,
+                                                        email: post.user?.email,
+                                                        name: post.user?.name || post.user?.username
+                                                    })
+                                                }}
+                                                style={styles.avatarImage}
+                                                resizeMode="cover"
+                                            />
+                                        </View>
                                         <View style={styles.postHeaderText}>
                                             <View style={styles.titleRow}>
                                                 <Text style={styles.postTitle} numberOfLines={1}>
