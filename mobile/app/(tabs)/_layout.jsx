@@ -28,6 +28,7 @@ export default function TabsLayout() {
         tabBarShowLabel: false,
       }}
     >
+      {/* Main Tabs */}
       <Tabs.Screen
         name="home/index"
         options={{
@@ -88,6 +89,20 @@ export default function TabsLayout() {
           ),
         }}
       />
+
+      {/* Hidden Routes (prevent them from showing as tabs) */}
+      <Tabs.Screen name="home" options={{ href: null }} />
+      <Tabs.Screen name="learn" options={{ href: null }} />
+      <Tabs.Screen name="earn" options={{ href: null }} />
+      <Tabs.Screen name="community" options={{ href: null }} />
+      <Tabs.Screen name="profile" options={{ href: null }} />
+
+      <Tabs.Screen name="index" options={{ href: null }} />
+      <Tabs.Screen name="CreatePost" options={{ href: null }} />
+      <Tabs.Screen name="PostDetails" options={{ href: null }} />
+      <Tabs.Screen name="TestPhase1" options={{ href: null }} />
+      <Tabs.Screen name="admin-panel" options={{ href: null }} />
+      <Tabs.Screen name="admin-panel-styles" options={{ href: null }} />
     </Tabs>
   );
 }

@@ -55,6 +55,7 @@ export const styles = StyleSheet.create({
         padding: 10,
         paddingRight: 45,
         fontSize: 16,
+        color: '#000',
         marginBottom: 10,
         backgroundColor: '#fff',
         shadowColor: '#000',
