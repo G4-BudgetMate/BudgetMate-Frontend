@@ -16,7 +16,7 @@
 ## 📚 Main Documentation
 
 ### [Documentation.md](./main/Documentation.md)
-**Complete Technical Reference** (1,307 lines)
+**Complete Technical Reference**
 
 All-in-one technical documentation covering:
 - System Functionalities (8+ features)
@@ -29,7 +29,7 @@ All-in-one technical documentation covering:
 ---
 
 ### [Database-Schema.md](./main/Database-Schema.md)
-**Database Design Guide** (357 lines)
+**Database Design Guide**
 
 Complete MongoDB schema documentation:
 - 8 collection schemas with field descriptions
@@ -42,7 +42,7 @@ Complete MongoDB schema documentation:
 ---
 
 ### [app-features-summary.md](./main/app-features-summary.md)
-**Features Overview** (1,007 lines)
+**Features Overview**
 
 Feature breakdown by tab:
 - Home - Budget tracking & analytics
@@ -121,12 +121,10 @@ Individual feature documentation in `features/` folder:
 
 **Recommended reading order:**
 
-1. **[app-features-summary.md](./main/app-features-summary.md)** (15 min) - Feature overview
-2. **[Database-Schema.md](./main/Database-Schema.md)** (20 min) - Data structure
-3. **[mobile-app-documentation.md](./main/mobile-app-documentation.md)** (10 min) - App architecture
-4. **[Documentation.md](./main/Documentation.md)** (30 min) - Technical deep dive
-
-**Total:** ~75 minutes for complete understanding
+1. **[app-features-summary.md](./main/app-features-summary.md)** - Feature overview
+2. **[Database-Schema.md](./main/Database-Schema.md)** - Data structure
+3. **[mobile-app-documentation.md](./main/mobile-app-documentation.md)** - App architecture
+4. **[Documentation.md](./main/Documentation.md)** - Technical deep dive
 
 ---
 
@@ -142,13 +140,13 @@ Individual feature documentation in `features/` folder:
 
 ## 📝 Evaluation Criteria Coverage
 
-| Criteria | Location | Lines |
-|----------|----------|-------|
-| System Functionalities (20%) | Documentation.md - Section 1 | 262 |
-| CRUD Operations (20%) | Documentation.md - Section 2 | 197 |
-| Database Design (20%) | Database-Schema.md | 357 |
-| Security & Validation (15%) | Documentation.md - Section 4 | 287 |
-| Documentation (10%) | All files | 3,500+ |
+| Criteria | Location |
+|----------|----------|
+| System Functionalities (20%) | Documentation.md - Section 1 |
+| CRUD Operations (20%) | Documentation.md - Section 2 |
+| Database Design (20%) | Database-Schema.md |
+| Security & Validation (15%) | Documentation.md - Section 4 |
+| Documentation (10%) | All files |
 
 ---
 
