@@ -9,8 +9,13 @@ const COLORS = {
     textSecondary: '#D7C7EC',
 };
 
-const ResourceCard = ({ title, description, url, iconName, color }) => {
+const ResourceCard = ({ title, description, url, iconName, color, onPress }) => {
     const handlePress = async () => {
+        if (onPress) {
+            onPress();
+            return;
+        }
+
         const supported = await Linking.canOpenURL(url);
         if (supported) {
             await Linking.openURL(url);

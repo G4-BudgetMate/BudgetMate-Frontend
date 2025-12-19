@@ -34,11 +34,13 @@ const SpendingChart = ({ expenses }) => {
         backgroundGradientFrom: COLORS.cardBg,
         backgroundGradientTo: COLORS.cardBg,
         decimalPlaces: 0,
-        color: (opacity = 1) => `rgba(227, 130, 60, ${opacity})`,
+        color: (opacity = 1) => `rgba(227, 130, 60, 0.5)`,
         labelColor: (opacity = 1) => `rgba(215, 199, 236, ${opacity})`,
         style: { borderRadius: moderateScale(16) },
         barPercentage: 0.6,
         propsForLabels: { fontSize: moderateScale(10), fontFamily: 'Poppins-Regular' },
+        fillShadowGradient: COLORS.primary, // Uses your primary orange color
+        fillShadowGradientOpacity: 1,       // Makes it solid (no fade)
     };
 
     return (
