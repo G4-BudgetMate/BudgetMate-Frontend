@@ -125,6 +125,12 @@ const Learn = () => {
                             url={item.url}
                             iconName={item.iconName}
                             color={item.color}
+                            onPress={() => {
+                                router.push({
+                                    pathname: `/article/${item._id}`,
+                                    params: { article: JSON.stringify(item) }
+                                });
+                            }}
                         />
                     ))
                 )}
